@@ -4,3 +4,173 @@
 *:after {
   box-sizing: border-box;
 }
+
+
+/*********** Styles **********/
+body {
+  font-family: Arial, Helvetica, 'sans-serif';
+}
+h2, h3, h4 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+/* Header */
+header {
+  font-family: Arial, Helvetica, 'sans-serif';
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+header a {
+  text-decoration: none;
+  color: black;
+}
+.siteName {
+  font-weight: bold;
+  font-size: 2em;
+  text-align: left;
+  padding: 10px;
+}
+
+
+
+
+/* Navigation */
+nav {
+  background-color: #242333;
+  color: white;
+  font-family: Arial, Helvetica, 'sans-serif';
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  display: inline;
+  margin: 10px;
+  padding: 5px;
+}
+
+
+
+/******** index.ejs *********/
+/* Hero Image */
+.hero-image {
+  background-image: url('/images/vehicles/delorean.jpg');
+  background-size: contain;
+  background-position: center;
+  height: 150px;
+  position: relative;
+  background-repeat: no-repeat;
+}
+.hero-text {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.43);
+  color: #0eb1d0;
+}
+.hero-text button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 7px 7px;
+  color: black;
+  background-color: #0eb1d0;
+  text-align: center;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 1px 1px 5px;
+}
+.hero-text h3 {
+  margin: 0;
+}
+
+/*** Contents ***/
+/** Review ***/
+.reviews ul {
+  padding-left: 20px;
+}
+.reviews ul li {
+  padding: 5px;
+}
+
+/** Upgrades ***/
+.upgrade-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+.upgrade-grid div {
+  display: grid;
+  text-align: center;
+  height: 100%;  
+  overflow: hidden;
+}
+.upgrade-images {
+  width: 100%;
+  height: 85px;
+  padding: 5px;
+  background-color: #0eb1d0;
+  border: 1px solid black;
+}
+.upgrade-images img {
+  background-size: contain;
+}
+
+
+
+
+/******* Responsive *******/
+@media (min-width: 600px) {
+  /** universal **/
+  body #wrapper {
+    width: 85%;
+    margin: 20px auto;
+    padding: 10px;
+    border: 5px solid #0eb1d0;
+    border-radius: 10px;
+    background-color: white;
+  }
+  body {
+    background-image: url(/images/site/small_check.jpg);
+  }
+  
+  /*** index.ejs ***/
+  /* Hero Image */
+  .hero-image {
+    height: 300px;
+    margin-bottom: 30px;
+  }
+  .hero-text {
+    top: 40%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+  }
+  .hero-text button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 15px;
+  }
+  /* Content */
+  .content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 10px;
+
+  }
+  .upgrades {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .reviews {
+    grid-row: 1;
+    grid-column: 2;
+  }
+  .reviews ul li {
+    font-size: 1.5em;
+  }
+
+}
